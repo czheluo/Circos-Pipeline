@@ -1,7 +1,13 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-
+my $BEGIN_TIME=time();
+use Getopt::Long;
+my ($snp,$indel,$sv,$cnv,$chrlist,$gff,$outdir,$paralist,$ssr,$snpplusindel,$outfile);
+use Data::Dumper;
+use FindBin qw($Bin $Script);
+use File::Basename qw(basename dirname);
+use List::Util qw(max min);
 
 	if($para[3] eq "cnv" && defined $para[5]){######plot cnv
 		open In,$cnv;
@@ -266,4 +272,43 @@ use warnings;
 		}
 	}
 
+#######################################################################################
+print STDOUT "\nDone. Total elapsed time : ",time()-$BEGIN_TIME,"s\n";
+#######################################################################################
+sub ABSOLUTE_DIR {
+	my $cur_dir=`pwd`;chomp($cur_dir);
+	my ($in)=@_;
+	my $return="";
+	if(-f $in){
+		my $dir=dirname($in);
+		my $file=basename($in);
+		chdir $dir;$dir=`pwd`;chomp $dir;
+		$return="$dir/$file";
+	}elsif(-d $in){
+		chdir $in;$return=`pwd`;chomp $return;
+	}else{
+		warn "Warning just for file and dir \n$in";
+		exit;
+	}
+	chdir $cur_dir;
+	return $return;
+}
+
+sub USAGE {#
+        my $usage=<<"USAGE";
+Contact:        meng.luo\@majorbio.com;
+Script:			$Script
+Description:
+	draw circos
+	eg:
+	perl $Script 
+
+Usage:
+  Options:
+ -h         Help
+
+USAGE
+        print $usage;
+        exit;
+}
 
