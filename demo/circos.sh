@@ -1,0 +1,1 @@
+perl circos.pipeline.v4.pl -snp data/snp/after/variant_compare.filter.vcf -indel data/snp/before/pop.final.vcf -snpplusindel data/snp/before/pop.final.vcf -ssr data/ssr/ref/ssr.ref.result.xls -sv data/sv/before/pop.sort.sv.vcf -outdir ./ -chrlist data/ref.chrlist -gff data/ref.gff -paramlist cir.list
