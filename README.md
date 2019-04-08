@@ -7,5 +7,4 @@
 ![circos V3 ](Fig/v3.png "circos V3")
 ### v4
 ![circos V4 ](Fig/v4.png "circos V4")
-### v5
-![circos V5 ](Fig/v1.png "circos V5")
+
