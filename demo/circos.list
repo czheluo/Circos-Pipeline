@@ -1,6 +1,6 @@
 #chromosomes	colors	circosnumber	type	typeplot	sampleid	windowssize	
-chr1;chr2;chr3;chr8;chr9;chr10	1	0.75r,0.65r	snp	scatter	 NA	1000000
-chr1;chr2;chr3;chr8;chr9;chr10	2	0.95r,0.85r	indel		line	NA 	1000000
-chr1;chr2;chr3;chr8;chr9;chr10	3	0.55r,0.45r	snpplusindel		histogram	NA 	1000000
-chr1;chr2;chr3;chr8;chr9;chr10	4	0.35r,0.25r	sv		histogram	 NA	1000000
-chr1;chr2;chr3;chr8;chr9;chr10	1	0.20r,0.10r	ssr		heatmap	 NA	100000
+all	1	0.75r,0.65r	snp	scatter	 NA	100000
+all	1	0.95r,0.85r	indel		line	NA 	100000
+all	1	0.55r,0.45r	gene		histogram	NA 	1000
+all	1	0.35r,0.25r	sv		histogram	 NA	100000
+all	1	0.20r,0.10r	ssr		heatmap	 NA	10000
