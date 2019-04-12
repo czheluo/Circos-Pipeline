@@ -11,16 +11,10 @@ use List::Util qw(max min);
 my $version="1.1.0";
 GetOptions(
 	"help|?" =>\&USAGE,
-	"snp:s"=>\$snp,
-	"indel:s"=>\$indel,
-	"cnv:s"=>\$cnv,
-	"sv:s"=>\$sv,
 	"gff:s"=>\$gff,
 	"chrlist:s"=>\$chrlist,
 	"outdir:s"=>\$outdir,
 	"paramlist:s"=>\$paralist,
-	"snpplusindel:s"=>\$snpplusindel,
-	"ssr:s"=>\$ssr,
 	"outfile:s"=>\$outfile,
 	"chrom:s"=>\$chromosome,
 			) or &USAGE;
@@ -332,7 +326,7 @@ while (<PA>) {
 	my($r1,$r0)=split/\,/,$para[2];
 	#print "$para[3]\t$para[5]";die;
 	if($para[3] eq "snp" && $para[5] ne "NA"){######plot snp
-		open In,$snp;
+		open In,$para[7];
 		if ($snp=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snp|";
@@ -448,7 +442,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "snp" && $para[5] eq "NA"){
-		open In,$snp;
+		open In,$para[7];
 		if ($snp=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snp|";
@@ -553,7 +547,7 @@ while (<PA>) {
 		my %hash;
 		my $win=$para[6];
 		my %hash_max;
-		open In,$indel;
+		open In,$para[7];
 		while(<In>){
 			chomp;
 			next if(/^##/);
@@ -661,7 +655,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "indel" && $para[5] eq "NA"){
-		open In,$indel or die "Can't open '$indel': $!";
+		open In,$para[7] or die "Can't open '$indel': $!";
 		if ($indel=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $indel|";
@@ -766,7 +760,7 @@ while (<PA>) {
 		my %hash;
 		my $win=$para[6];
 		my %hash_max;
-		open In,$snpplusindel;
+		open In,$para[7];
 		if ($snpplusindel=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snpplusindel|";
@@ -878,7 +872,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "snpplusindel" && $para[5] eq "NA"){
-		open In,$snpplusindel;
+		open In,$para[7];
 		if ($snpplusindel=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snpplusindel|";
@@ -977,7 +971,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "cnv" && $para[5] ne "NA"){######plot cnv both same format
-		open In,$cnv;
+		open In,$para[7];
 		my $max;    
 		my %hash;
 		my $win=$para[6];
@@ -1071,7 +1065,7 @@ while (<PA>) {
 			";
 		}
 	}elsif ($para[3] eq "cnv" && $para[5] eq "NA"){######plot cnv both same format
-		open In,$cnv;
+		open In,$para[7];
 		my $max;    
 		my %hash;
 		my $win=$para[6];
@@ -1165,7 +1159,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "sv" && $para[5] ne "NA"){######plot sv
-		open In,$sv;
+		open In,$para[7];
 		my $nsam;
 		my @sample;
 		my $max;
@@ -1325,7 +1319,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "sv" && $para[5] eq "NA"){######plot sv
-		open In,$sv;
+		open In,$para[7];
 		my $max;
 		my %hash;
 		my $win=$para[6];
@@ -1444,7 +1438,7 @@ while (<PA>) {
 			";
 		}	
 	}elsif($para[3] eq "ssr" && $para[5] ne "NA"){######plot ssr
-		open In,$ssr;
+		open In,$para[7];
 		my $max;    
 		my %hash;
 		my $win=$para[6];
@@ -1535,7 +1529,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "ssr" && $para[5] eq "NA"){######plot ssr
-		open In,$ssr;
+		open In,$para[7];
 		my $max;    
 		my %hash;
 		my $win=$para[6];
@@ -1820,6 +1814,7 @@ while (<PA>) {
 			";
 		}
 	}
+	$nlm++;
 }
 close PA;
 #print $nlm;die;
@@ -1964,7 +1959,7 @@ if($para[1] eq "4"){##forth color type
 	print Color "bandcol10=rgb(105,105,105)\n";
 	close Color;	
 }
-##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticks£© 
+##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticksÂ£Â© 
 if ($para[0] eq "all"){
     system("circos -conf $outdir/draw.circos/draw.conf -outputfile $outfile -outputdir $outdir ");
 }else {
