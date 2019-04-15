@@ -364,7 +364,7 @@ while (<PA>) {
 		}
 		close In;
 		#my $file_name=$para[5];
-		open OUT,">$outdir/draw.circos/windows.file/$para[5].snp.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 		  # print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -387,7 +387,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max#0.015
@@ -403,7 +403,7 @@ while (<PA>) {
 			######plot snp
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -420,7 +420,7 @@ while (<PA>) {
 			######plot snp
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -432,7 +432,7 @@ while (<PA>) {
 			######plot snp
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -464,7 +464,7 @@ while (<PA>) {
 		}
 		close In;
 		#my $file_name=(split/\//,$snp)[-1];
-		open OUT,">$outdir/draw.circos/windows.file/$para[5].snp.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			foreach my $num (sort keys %{$hash{$keys}}){
 			 my $chr=$keys;
@@ -485,7 +485,7 @@ while (<PA>) {
         <plot>
         type = line
         max_gap = 1u
-        file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
         color   = white
         min     = 0
         max     = $max#0.015
@@ -501,7 +501,7 @@ while (<PA>) {
         ######plot snp
         <plot>
         type=scatter
-        file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
         #fill_color=green
         stroke_color=blue
         glyph=circle#rectangle
@@ -518,7 +518,7 @@ while (<PA>) {
         ######plot snp
         <plot>
         type=heatmap
-        file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
         color   = col1,col2,col3,col4,col5
         r1      = $r1
         r0      = $r0
@@ -530,7 +530,7 @@ while (<PA>) {
         ######plot snp
         <plot>
         type=histogram
-        file    = $outdir/draw.circos/windows.file/$para[5].snp.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snp.$nlm.win.txt
         color   = white
         r1      = $r1
         r0      = $r0
@@ -578,7 +578,7 @@ while (<PA>) {
 		#print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/$para[5].indel.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$para[5].indel.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 		 # print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -600,7 +600,7 @@ while (<PA>) {
         <plot>
         type = line
         max_gap = 1u
-        file    = $outdir/draw.circos/windows.file/$para[5].indel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].indel.$nlm.win.txt
         color   = white
         min     = 0
         max     = $max#0.015
@@ -616,7 +616,7 @@ while (<PA>) {
 			######plot indel
         <plot>
         type=scatter
-        file    = $outdir/draw.circos/windows.file/$para[5].indel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].indel.$nlm.win.txt
         #fill_color=green
         stroke_color=blue
         glyph=circle#rectangle
@@ -633,7 +633,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=heatmap
-        file    = $outdir/draw.circos/windows.file/$para[5].indel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].indel.$nlm.win.txt
         color   = col1,col2,col3,col4,col5
         r1      = $r1
         r0      = $r0
@@ -645,7 +645,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=histogram
-        file    = $outdir/draw.circos/windows.file/$para[5].indel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].indel.$nlm.win.txt
         color   = white
         r1      = $r1
         r0      = $r0
@@ -655,7 +655,7 @@ while (<PA>) {
 			";
 		}
 	}elsif($para[3] eq "indel" && $para[5] eq "NA"){
-		open In,$para[7] or die "Can't open '$indel': $!";
+		open In,$para[7];
 		if ($indel=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $indel|";
@@ -677,7 +677,7 @@ while (<PA>) {
 			#print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/indel.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/indel.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
         # print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -699,7 +699,7 @@ while (<PA>) {
         <plot>
         type = line
         max_gap = 1u
-        file    = $outdir/draw.circos/windows.file/indel.win.txt
+        file    = $outdir/draw.circos/windows.file/indel.$nlm.win.txt
         color   = white
         min     = 0
         max     = $max#0.015
@@ -715,7 +715,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=scatter
-        file    = $outdir/draw.circos/windows.file/indel.win.txt
+        file    = $outdir/draw.circos/windows.file/indel.$nlm.win.txt
         #fill_color=green
         stroke_color=blue
         glyph=circle#rectangle
@@ -732,7 +732,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=heatmap
-        file    = $outdir/draw.circos/windows.file/indel.win.txt
+        file    = $outdir/draw.circos/windows.file/indel.$nlm.win.txt
         color   = col1,col2,col3,col4,col5
         r1      = $r1
         r0      = $r0
@@ -744,7 +744,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=histogram
-        file    = $outdir/draw.circos/windows.file/indel.win.txt
+        file    = $outdir/draw.circos/windows.file/indel.$nlm.win.txt
         color   = white
         r1      = $r1
         r0      = $r0
@@ -795,7 +795,7 @@ while (<PA>) {
      #print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/$para[5].snpplusindel.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$para[5].snpplusindel.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
         # print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -817,7 +817,7 @@ while (<PA>) {
         <plot>
         type = line
         max_gap = 1u
-        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.$nlm.win.txt
         color   = white
         min     = 0
         max     = $max#0.015
@@ -833,7 +833,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=scatter
-        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.$nlm.win.txt
         #fill_color=green
         stroke_color=blue
         glyph=circle#rectangle
@@ -850,7 +850,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=heatmap
-        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.$nlm.win.txt
         color   = col1,col2,col3,col4,col5
         r1      = $r1
         r0      = $r0
@@ -862,7 +862,7 @@ while (<PA>) {
         ######plot indel
         <plot>
         type=histogram
-        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.win.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].snpplusindel.$nlm.win.txt
         color   = white
         r1      = $r1
         r0      = $r0
@@ -894,7 +894,7 @@ while (<PA>) {
      #print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/snpplusindel.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/snpplusindel.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			#print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -916,7 +916,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/snpplusindel.win.txt
+			file    = $outdir/draw.circos/windows.file/snpplusindel.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max#0.015
@@ -932,7 +932,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/snpplusindel.win.txt
+			file    = $outdir/draw.circos/windows.file/snpplusindel.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -949,7 +949,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/snpplusindel.win.txt
+			file    = $outdir/draw.circos/windows.file/snpplusindel.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -961,7 +961,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/snpplusindel.win.txt
+			file    = $outdir/draw.circos/windows.file/snpplusindel.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -988,7 +988,7 @@ while (<PA>) {
      #print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/$para[5].cnv.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$para[5].$nlm.cnv.txt";
 		foreach my $keys (sort keys %hash){
 			#print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -1010,7 +1010,7 @@ while (<PA>) {
         <plot>
         type = line
         max_gap = 1u
-        file    = $outdir/draw.circos/windows.file/$para[5].cnv.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].$nlm.cnv.txt
         color   = white
         min     = 0
         max     = $max
@@ -1026,7 +1026,7 @@ while (<PA>) {
         ######plot cnv
         <plot>
         type=scatter
-        file    = $outdir/draw.circos/windows.file/$para[5].cnv.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].$nlm.cnv.txt
         #fill_color=green
         stroke_color=blue
         glyph=circle#rectangle
@@ -1043,7 +1043,7 @@ while (<PA>) {
         ######plot cnv
         <plot>
         type=heatmap
-        file    = $outdir/draw.circos/windows.file/$para[5].cnv.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].$nlm.cnv.txt
         color   = col1,col2,col3,col4,col5
         r1      = $r1
         r0      = $r0
@@ -1055,7 +1055,7 @@ while (<PA>) {
         ######plot cnv
         <plot>
         type=histogram
-        file    = $outdir/draw.circos/windows.file/$para[5].cnv.txt
+        file    = $outdir/draw.circos/windows.file/$para[5].$nlm.cnv.txt
         color   = white
         r1      = $r1
         r0      = $r0
@@ -1082,7 +1082,7 @@ while (<PA>) {
      #print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/cnv.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/cnv.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			#print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -1104,7 +1104,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/cnv.win.txt
+			file    = $outdir/draw.circos/windows.file/cnv.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max
@@ -1120,7 +1120,7 @@ while (<PA>) {
 			######plot cnv
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/cnv.win.txt
+			file    = $outdir/draw.circos/windows.file/cnv.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1137,7 +1137,7 @@ while (<PA>) {
 			######plot cnv
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/cnv.win.txt
+			file    = $outdir/draw.circos/windows.file/cnv.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1149,7 +1149,7 @@ while (<PA>) {
 			######plot cnv
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/cnv.win.txt
+			file    = $outdir/draw.circos/windows.file/cnv.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1197,7 +1197,7 @@ while (<PA>) {
 				$hash{$array[0]}{$win_num}++;
 			}
 			close In;
-			open OUT,">$outdir/draw.circos/windows.file/$para[5].sv.win.txt";
+			open OUT,">$outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt";
 			foreach my $keys (sort keys %hash){
         # print "$keys\n";
 				foreach my $num (sort keys %{$hash{$keys}}){
@@ -1241,7 +1241,7 @@ while (<PA>) {
 				$hash{$array[1]}{$win_num}++;
 			}
 			close In;
-			open OUT,">$outdir/draw.circos/windows.file/$para[5].sv.win.txt";
+			open OUT,">$outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt";
 			foreach my $keys (sort keys %hash){
 			# print "$keys\n";
 				foreach my $num (sort keys %{$hash{$keys}}){
@@ -1264,7 +1264,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/$para[5].sv.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max
@@ -1280,7 +1280,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/$para[5].sv.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1297,7 +1297,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/$para[5].sv.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1309,7 +1309,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/$para[5].sv.win.txt
+			file    = $outdir/draw.circos/windows.file/$para[5].sv.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1334,7 +1334,7 @@ while (<PA>) {
 				$hash{$array[0]}{$win_num}++;
 			}
 			close In;
-			open OUT,">$outdir/draw.circos/windows.file/sv.win.txt";
+			open OUT,">$outdir/draw.circos/windows.file/sv.$nlm.win.txt";
 			foreach my $keys (sort keys %hash){
 			# print "$keys\n";
 				foreach my $num (sort keys %{$hash{$keys}}){
@@ -1383,7 +1383,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/sv.win.txt
+			file    = $outdir/draw.circos/windows.file/sv.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max
@@ -1399,7 +1399,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/sv.win.txt
+			file    = $outdir/draw.circos/windows.file/sv.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1416,7 +1416,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/sv.win.txt
+			file    = $outdir/draw.circos/windows.file/sv.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1428,7 +1428,7 @@ while (<PA>) {
 			######plot sv
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/sv.win.txt
+			file    = $outdir/draw.circos/windows.file/sv.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1454,7 +1454,7 @@ while (<PA>) {
 		}
 		close In;
 		my $file_name=$para[5];
-		open OUT,">$outdir/draw.circos/windows.file/$file_name.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$file_name.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			foreach my $num (sort keys %{$hash{$keys}}){
 				my $chr=$keys;
@@ -1474,7 +1474,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max
@@ -1490,7 +1490,7 @@ while (<PA>) {
 			######plot ssr
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1507,7 +1507,7 @@ while (<PA>) {
 			######plot cnv
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1519,7 +1519,7 @@ while (<PA>) {
 			######plot ssr
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1564,7 +1564,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/ssr.win.txt
+			file    = $outdir/draw.circos/windows.file/ssr.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max
@@ -1580,7 +1580,7 @@ while (<PA>) {
 			######plot ssr
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/ssr.win.txt
+			file    = $outdir/draw.circos/windows.file/ssr.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1597,7 +1597,7 @@ while (<PA>) {
 			######plot cnv
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/ssr.win.txt
+			file    = $outdir/draw.circos/windows.file/ssr.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1609,7 +1609,7 @@ while (<PA>) {
 			######plot ssr
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/ssr.win.txt
+			file    = $outdir/draw.circos/windows.file/ssr.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1640,7 +1640,7 @@ while (<PA>) {
 		}
 		close In;
 		my $file_name=$para[5];
-		open OUT,">$outdir/draw.circos/windows.file/$file_name.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/$file_name.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			# print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -1662,7 +1662,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max#0.015
@@ -1678,7 +1678,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1695,7 +1695,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1707,7 +1707,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/$file_name.win.txt
+			file    = $outdir/draw.circos/windows.file/$file_name.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1737,7 +1737,7 @@ while (<PA>) {
 		#print Dumper \%hash;die;
 		}
 		close In;
-		open OUT,">$outdir/draw.circos/windows.file/gene.win.txt";
+		open OUT,">$outdir/draw.circos/windows.file/gene.$nlm.win.txt";
 		foreach my $keys (sort keys %hash){
 			# print "$keys\n";
 			foreach my $num (sort keys %{$hash{$keys}}){
@@ -1759,7 +1759,7 @@ while (<PA>) {
 			<plot>
 			type = line
 			max_gap = 1u
-			file    = $outdir/draw.circos/windows.file/gene.win.txt
+			file    = $outdir/draw.circos/windows.file/gene.$nlm.win.txt
 			color   = white
 			min     = 0
 			max     = $max#0.015
@@ -1775,7 +1775,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=scatter
-			file    = $outdir/draw.circos/windows.file/gene.win.txt
+			file    = $outdir/draw.circos/windows.file/gene.$nlm.win.txt
 			#fill_color=green
 			stroke_color=blue
 			glyph=circle#rectangle
@@ -1792,7 +1792,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=heatmap
-			file    = $outdir/draw.circos/windows.file/gene.win.txt
+			file    = $outdir/draw.circos/windows.file/gene.$nlm.win.txt
 			color   = col1,col2,col3,col4,col5
 			r1      = $r1
 			r0      = $r0
@@ -1804,7 +1804,7 @@ while (<PA>) {
 			######plot indel
 			<plot>
 			type=histogram
-			file    = $outdir/draw.circos/windows.file/gene.win.txt
+			file    = $outdir/draw.circos/windows.file/gene.$nlm.win.txt
 			color   = white
 			r1      = $r1
 			r0      = $r0
@@ -1817,7 +1817,6 @@ while (<PA>) {
 	$nlm++;
 }
 close PA;
-#print $nlm;die;
 $main_conf.="
 </plots>
 <colors>
@@ -1959,7 +1958,7 @@ if($para[1] eq "4"){##forth color type
 	print Color "bandcol10=rgb(105,105,105)\n";
 	close Color;	
 }
-##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticksÂ£Â© 
+##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticks£© 
 if ($para[0] eq "all"){
     system("circos -conf $outdir/draw.circos/draw.conf -outputfile $outfile -outputdir $outdir ");
 }else {
