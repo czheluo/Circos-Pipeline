@@ -20,6 +20,8 @@ GetOptions(
 			) or &USAGE;
 &USAGE unless ($gff and $chrlist and $paralist);
 #$plottype||="line scatter histogram heatmap";#stuckbar
+$gff=ABSOLUTE_DIR($gff);
+$chrlist=ABSOLUTE_DIR($chrlist);
 $outfile||="circos";
 $outdir||="./";
 ########
@@ -327,7 +329,7 @@ while (<PA>) {
 	#print "$para[3]\t$para[5]";die;
 	if($para[3] eq "snp" && $para[5] ne "NA"){######plot snp
 		open In,$para[7];
-		if ($snp=~/.gz$/) {
+		if ($para[7]=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snp|";
 		}
@@ -443,7 +445,7 @@ while (<PA>) {
 		}
 	}elsif($para[3] eq "snp" && $para[5] eq "NA"){
 		open In,$para[7];
-		if ($snp=~/.gz$/) {
+		if ($para[7]=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snp|";
 		}
@@ -656,7 +658,7 @@ while (<PA>) {
 		}
 	}elsif($para[3] eq "indel" && $para[5] eq "NA"){
 		open In,$para[7];
-		if ($indel=~/.gz$/) {
+		if ($para[7]=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $indel|";
 		}
@@ -761,7 +763,7 @@ while (<PA>) {
 		my $win=$para[6];
 		my %hash_max;
 		open In,$para[7];
-		if ($snpplusindel=~/.gz$/) {
+		if ($para[7]=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snpplusindel|";
 		}
@@ -873,7 +875,7 @@ while (<PA>) {
 		}
 	}elsif($para[3] eq "snpplusindel" && $para[5] eq "NA"){
 		open In,$para[7];
-		if ($snpplusindel=~/.gz$/) {
+		if ($para[7]=~/.gz$/) {
 			close In;
 			open In,"gunzip -c $snpplusindel|";
 		}
@@ -1324,7 +1326,7 @@ while (<PA>) {
 		my %hash;
 		my $win=$para[6];
 		my %hash_max;
-		if ($sv =~ "vcf") {
+		if ($para[7] =~ "vcf") {
 			while(<In>){
 				chomp;
 				next if(/^#/);
