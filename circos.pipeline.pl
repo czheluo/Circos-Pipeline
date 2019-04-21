@@ -1815,6 +1815,38 @@ while (<PA>) {
 			######
 			";
 		}
+	}elsif ($para[3] eq "express" && $para[5] ne "NA"){
+		open In,$exp;
+		my %genen;
+		my %genes;
+		while (<In>){
+			chomp;
+			if ($_ =~ "geneid"){
+				my ($geneidn,$idn)=split/\s+/,$_,2;
+				$genen{$geneidn}=$idn;
+			}else{
+				my ($geneids,$ids)=split/\s+/,$_,2;
+				$genes{$geneids}=$ids;
+			}
+		}
+		close In;
+		open IN,$gff;
+		my %result;
+		while (<IN>){
+			chomp;
+			my ($chr,undef,$type,$start,$end,undef,undef,undef,undef,undef,$geneid,$gened,undef)=split/\s+/,$_,13;
+			next if ($geneid ne "gene_id");
+			$gened =~ s/;//g;
+			$gened =~ s/"//g;
+			if (exists $genes{$gened}){
+				my @rsem=split(/\s+/,$genes{$gened});
+				$result{$gened}=$rsem[1];
+			}
+			#print Dumper %result;die;
+			print OUT "$chr\t$start\t$end\t$gene\tfill_color=$chr_colour{$chr}\n";
+		}
+		close In;
+
 	}
 	$nlm++;
 }
@@ -1960,7 +1992,7 @@ if($para[1] eq "4"){##forth color type
 	print Color "bandcol10=rgb(105,105,105)\n";
 	close Color;	
 }
-##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticks£© 
+##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticksÂ£Â© 
 if ($para[0] eq "all"){
     system("circos -conf $outdir/draw.circos/draw.conf -outputfile $outfile -outputdir $outdir ");
 }else {
