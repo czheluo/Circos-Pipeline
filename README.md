@@ -1,5 +1,5 @@
 ## Circos-Pipeline
-config/demo1/circos.png
+
 ### demo1 chord diagram 
 ![circos Demo1](config/demo1/circos.png "circos Demo1")
 
