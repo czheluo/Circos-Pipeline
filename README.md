@@ -1,6 +1,6 @@
 ## Circos-Pipeline
 
-### Call Variantion (ssr、cnv、sv、gene、snp、indel)
+### Call Variation (ssr、cnv、sv、gene、snp、indel)
 
 > running code
 
