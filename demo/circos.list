@@ -1,0 +1,7 @@
+#chromosomes	colors	circosnumber	type	typeplot	sampleid	windowssize	pwd
+all	3	0.84r,0.74r	snp	scatter	NA	10000	snp.anno.primary.vcf.gz
+all	3	0.99r,0.89r	indel	line	NA	10000	indel.anno.primary.vcf.gz
+all	3	0.69r,0.59r	gene	heatmap	NA	10000	ref.gff.gz
+all	3	0.39r,0.29r	sv	histogram	NA	10000	pop.sort.sv.vcf.gz
+all	3	0.24r,0.14r	cnv	scatter	NA	10000	cnv.anno.xls.gz
+all	3	0.54r,0.44r	ssr	scatter	NA	10000	ssr.ref.result.xls.gz
