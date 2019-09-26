@@ -1,5 +1,16 @@
 ## Circos-Pipeline
 
+### Call Variantion (ssr、cnv、sv、gene、snp、indel)
+
+> running code
+
+```linux
+$  perl circos.pipeline.pl -chrlist ref.list -gff ref.gff --outdir ./  --paramlist circos.list
+```
+
+![circos Demo1](Fig/circos.3.svg "circos Demo1")
+
+
 ### demo1 chord diagram 
 ![circos Demo1](config/demo1/circos.png "circos Demo1")
 
