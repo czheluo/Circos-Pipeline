@@ -140,7 +140,7 @@ if ($chromosome){
 	chromosomes_display_default = yes
 	chromosomes=$chr_draw #chromosomes = hs1:(-100,120-);hs2;hs3;h4
 	#chromosomes_order =$chr_draw
-	<colors>	
+	<colors>
 	";
 }
 my %chr_colour;
@@ -1961,7 +1961,7 @@ if($para[1] eq "4"){##forth color type
 	print Color "bandcol10=rgb(105,105,105)\n";
 	close Color;	
 }
-##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticks£© 
+##display the exactly chromosome (-chromosomes "chr1;chr2",-show_ticksÂ£Â© 
 if ($para[0] eq "all"){
     system("circos -conf $outdir/draw.circos/draw.conf -outputfile $outfile -outputdir $outdir ");
 }else {
