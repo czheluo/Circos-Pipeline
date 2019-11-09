@@ -6,7 +6,7 @@
 > running code
 
 ```linux
-$  perl circos.pipeline.pl -chrlist ref.list -gff ref.gff --outdir ./ --paramlist circos.list
+$  perl circos.pipeline.pl -chrlist ref.list -gff ref.gff -outdir ./ -paramlist circos.list
 ```
 
 ![circos Demo1](Fig/circos.3.svg "circos Demo1")
