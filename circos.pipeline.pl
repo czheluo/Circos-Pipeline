@@ -1993,7 +1993,7 @@ sub ABSOLUTE_DIR {
 
 sub USAGE {#
         my $usage=<<"USAGE";
-Contact:        meng.luo\@majorbio.com;
+Contact:        czheluo\@gmail.com;
 Script:			$Script
 Description:
 	draw circos
