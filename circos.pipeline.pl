@@ -1170,7 +1170,7 @@ while (<PA>) {
 		my $win=$para[6];
 		my %hash_max;
 		my $file_name;
-		if ($sv =~ "vcf") {
+		if ($para[7] =~ "vcf") {
 			while(<In>){
 				chomp;
 				next if(/^##/);
@@ -1447,9 +1447,10 @@ while (<PA>) {
 		my $win=$para[6];
 		my %hash_max;
 		while(<In>){
-        #$_=~s/sca/chr/g;
+			chomp;
+        		#$_=~s/sca/chr/g;
 			next if (/^#/);
-        #$_=~s/[\n\r]//g;
+			$_=~s/[\n\r]//g;
 			my @array=split;
 			my $win_num=int($array[5]/$win)+1;
 			next if (!exists $hash_chr_num{$array[0]});
@@ -1635,7 +1636,7 @@ while (<PA>) {
         #$_=~s/[\n\r]//g;
         #print $_;
 			my @array=split;
-			next if ($array[2] ne "gene");
+			next if ($array[2] ne "gene" || $array[2] ne "mRNA");
 			my $win_num=int($array[3]/$win)+1;
 			next if (!exists $hash_chr_num{$array[0]});
 			$hash{$array[0]}{$win_num}++;
@@ -1733,7 +1734,7 @@ while (<PA>) {
         #$_=~s/[\n\r]//g;
         #print $_;
 			my @array=split;
-			next if ($array[2] ne "gene");
+			next if ($array[2] ne "gene" || $array[2] ne "mRNA");
 			my $win_num=int($array[3]/$win)+1;
 			next if (!exists $hash_chr_num{$array[0]});
 			$hash{$array[0]}{$win_num}++;
@@ -1997,7 +1998,7 @@ Script:			$Script
 Description:
 	draw circos
 	eg:
-	perl $Script 
+	perl $Script -chrlist ref.chrlist  -gff ref.gff -paramlist circos.list
 
 Usage:
   Options:
