@@ -1968,7 +1968,6 @@ if ($para[0] eq "all"){
 }else {
 	system("circos -conf $outdir/draw.circos/draw.conf -outputfile $outfile -outputdir $outdir -param chromosomes_display_default=no -param chromosomes= $para[0] ");
 }
-
 #######################################################################################
 print STDOUT "\nDone. Total elapsed time : ",time()-$BEGIN_TIME,"s\n";
 #######################################################################################
@@ -1990,7 +1989,6 @@ sub ABSOLUTE_DIR {
 	chdir $cur_dir;
 	return $return;
 }
-
 sub USAGE {#
         my $usage=<<"USAGE";
 Contact:        czheluo\@gmail.com;
@@ -1998,6 +1996,7 @@ Script:			$Script
 Description:
 	draw circos
 	eg:
+	
 	perl $Script -chrlist ref.chrlist  -gff ref.gff -paramlist circos.list
 
 Usage:
