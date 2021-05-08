@@ -16,6 +16,9 @@ $  perl circos.pipeline.pl -chrlist ref.list -gff ref.gff -outdir ./ -paramlist 
 ### demo1 chord diagram 
 ![circos Demo1](config/demo1/circos.png "circos Demo1")
 
+### circRNA
+![circos V1 ](Fig/circRNA.png "circos V1")
+
 ### v1
 ![circos V1 ](Fig/circos.png "circos V1")
 
